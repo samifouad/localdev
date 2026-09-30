@@ -1,0 +1,14 @@
+{
+  "name": "localdev",
+  "version": "0.1.0",
+  "description": "One command to run a workspace's local stack with dekit, behind dekit-router's port-less preview URLs",
+  "license": "Apache-2.0",
+  "type": "module",
+  "bin": { "localdev": "src/main.ts" },
+  "scripts": {
+    "test": "bun test",
+    "build": "bun build --compile --minify src/main.ts --outfile dist/localdev",
+    "install:local": "bun run build && mkdir -p ~/.local/bin && cp dist/localdev ~/.local/bin/localdev"
+  },
+  "devDependencies": { "@types/bun": "latest" }
+}
